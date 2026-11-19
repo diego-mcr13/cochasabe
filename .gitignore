@@ -1,0 +1,10 @@
+.DS_Store
+node_modules/
+.env
+.env.*
+
+# Material interno del equipo (no va al repo público por ahora)
+wiki/
+references/
+.playwright-mcp/
+.impeccable/
