@@ -37,3 +37,15 @@ Pon la URL del proyecto y la clave pública (*publishable* o *anon*) en `js/conf
 - ⏳ Entrar con celular, cuenta para invitados, datos compartidos en Supabase.
 - ⏳ Stellar testnet: cuenta al crear el perfil (nivel 1) y pago al calificar «Me sirvió»
   (nivel 2).
+
+## Stellar (testnet)
+Los cochapuntos son el activo **COCHA**. CochaSabe los emite y los paga desde su cuenta
+distribuidora, con un memo por cada acción.
+
+```bash
+npm install
+npm run stellar:setup   # crea la emisora y la distribuidora de COCHA y guarda las claves en .env
+npm run stellar:e2e     # prueba: cuenta nueva, +5 COCHA, −1 COCHA y saldo leído de la cadena
+npm run typecheck
+```
+Requiere Node 22.18 o superior. Las claves quedan solo en `.env`, que está ignorado por git.

@@ -1,0 +1,20 @@
+{
+  "name": "cochasabe",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22.18"
+  },
+  "scripts": {
+    "stellar:setup": "node --env-file-if-exists=.env scripts/stellar/setup.ts",
+    "stellar:e2e": "node --env-file-if-exists=.env scripts/stellar/e2e.ts",
+    "typecheck": "tsc -p ."
+  },
+  "dependencies": {
+    "@stellar/stellar-sdk": "17.4.0"
+  },
+  "devDependencies": {
+    "@types/node": "24.10.1",
+    "typescript": "5.9.3"
+  }
+}

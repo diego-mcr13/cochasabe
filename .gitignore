@@ -8,3 +8,4 @@ wiki/
 references/
 .playwright-mcp/
 .impeccable/
+!.env.example

@@ -11,9 +11,16 @@ wiki, búscalo en `references/` y después agrégalo a la wiki.
 ## Reglas que no se rompen
 - En la interfaz se dice siempre «cochapuntos». Nunca «XLM», «estelares», «tokens», «cripto» ni
   «blockchain».
-- Solo **testnet**. Las claves en localStorage se aceptan solo por eso.
-- El código parte del prototipo v9 (`references/Prototipo CochaSabe.html`): se separa en
-  archivos, no se reescribe.
+- Solo **testnet**. Las claves secretas viven en `.env` o en las variables de entorno de
+  Vercel, **nunca** en el repo ni en el frontend.
+- Stack: React + TS (Vite), Supabase + funciones de Vercel (`/api`) y deploy en Vercel. El
+  prototipo v9 (`references/Prototipo CochaSabe.html`) es la **especificación** de las
+  pantallas.
+- Los cochapuntos son el activo **COCHA** en Stellar. Los premios los paga la distribuidora de
+  CochaSabe, con un memo (`ayuda:q123`), y el saldo se lee de la cadena. Las funciones
+  compartidas están en `lib/stellar/cocha.ts`.
+- Todo acceso a datos pasa por una sola capa (`src/data/`), para poder cambiar de Supabase a
+  otro Postgres sin tocar las pantallas.
 - El **Mapa** (`wiki/producto/pantallas-y-flujos.md`) es la lista de chequeo de las pantallas.
 - Los colores salen de variables CSS; nunca se escriben a mano. Claro y oscuro siempre.
 - Si un pago en Stellar falla, se avisa y **no se bloquea la calificación**.
